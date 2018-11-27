@@ -3,31 +3,36 @@ import Header from '../Header/Header';
 import Menu from '../Menu/Menu';
 import Games from '../Games/Games';
 import Footer from '../Footer/Footer';
-import styles from './Main.css';
+import './Main.css';
 
 class Main extends Component {
   state = {
     sport: [],
-    selectedSport: ''
+    selectedSport: '',
+    randomArray: [],
+    isActive: false
   };
 
   handleClick = e => {
     const selectedSport = e.target.innerHTML.toLowerCase();
 
-    this.setState({ ...this.state, selectedSport });
+    this.setState({ ...this.state, selectedSport, isActive: true });
   };
 
   sportSelector = () => {
-    const filterSports = this.state.sport.filter(e =>
+    this.state.sport.filter(e =>
       e.this.state.sport.includes(this.state.selectedSport)
     );
-    console.log(this.state.sport); //
-    console.log(this.state.selectedSport); //
   };
 
   randomOdds = () => {
-    const randomOdds = (Math.random() * (10.0 - 1.0 + 1.0) + 1.0).toFixed(2);
-    return randomOdds;
+    const randomArray = [];
+    for (let i = 0; i < 3; i++) {
+      randomArray.push(
+        Math.floor(Math.random() * (10.0 - 1.0 + 1.0) + 1.0).toFixed(2)
+      );
+    }
+    this.setState({ ...this.state, randomArray });
   };
 
   componentDidMount() {
@@ -48,11 +53,15 @@ class Main extends Component {
     return (
       <div className="main-wrapper">
         <Header />
-        <Menu sport={this.state.sport} handleClick={this.handleClick} />
+        <Menu
+          sport={this.state.sport}
+          handleClick={this.handleClick}
+          isActive={this.state.isActive}
+        />
         <Games
           sport={this.state.sport}
           selectedSport={this.state.selectedSport.toLowerCase()}
-          randomOdds={this.randomOdds}
+          randomArray={this.state.randomArray}
         />
         <Footer />
       </div>

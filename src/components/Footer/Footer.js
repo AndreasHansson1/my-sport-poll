@@ -1,12 +1,8 @@
 import React from 'react';
-import styles from './Footer.css';
+import './Footer.css';
 
 const Footer = () => {
-  return (
-    <div className="footer-wrapper">
-      <h1>Footer</h1>
-    </div>
-  );
+  return <div className="footer-wrapper">&copy; By Andreas Hansson 2018</div>;
 };
 
 export default Footer;

@@ -9,18 +9,17 @@ const gamesWrapper = {
 };
 const Games = props => {
   const sportArray = props.sport.map((data, index) => {
-    // const myArray = [];
     if (data.sport.toLowerCase() === props.selectedSport) {
-      //   myArray.push(data.sport);
       return (
         <div key={index} className="sport-div">
           <h4>{data.homeName}</h4>
           <p>vs</p>
           <h4>{data.awayName}</h4>
-          <OddsFeed randomOdds={props.randomOdds} />
+          <OddsFeed randomArray={props.randomArray} />
         </div>
       );
     }
+    return;
   });
 
   return (

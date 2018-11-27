@@ -3,10 +3,11 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  height: 1.5rem;
   background-color: beige;
 }
 
-.menu-item {
-  /* display: flex; */
+.menu-item:hover {
+  cursor: pointer;
   background-color: rgb(205, 247, 233);
 }

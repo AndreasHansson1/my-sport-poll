@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Menu.css';
+import './Menu.css';
 
 const Menu = props => {
   const filteredData = [...new Set(props.sport.map(item => item.sport))];

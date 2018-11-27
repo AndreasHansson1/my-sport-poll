@@ -1,0 +1,24 @@
+.odds-div-wrapper {
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.odds-div {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 2px 5px;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  background-color: rgb(105, 236, 53);
+}
+
+.odds-div p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
