@@ -18,6 +18,11 @@
   background-color: rgb(105, 236, 53);
 }
 
+.odds-div:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
 .odds-div p {
   margin: 5px 0;
   font-size: 0.9rem;

@@ -15,7 +15,10 @@ const Games = props => {
           <h4>{data.homeName}</h4>
           <p>vs</p>
           <h4>{data.awayName}</h4>
-          <OddsFeed randomArray={props.randomArray} />
+          <OddsFeed
+            randomArray={props.randomArray}
+            clickEvent={props.clickEvent}
+          />
         </div>
       );
     }

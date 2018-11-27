@@ -3,13 +3,15 @@ import Header from '../Header/Header';
 import Menu from '../Menu/Menu';
 import Games from '../Games/Games';
 import Footer from '../Footer/Footer';
+import Result from '../Result/Result';
 import './Main.css';
 
 class Main extends Component {
   state = {
     sport: [],
     selectedSport: '',
-    randomArray: []
+    randomArray: [],
+    showComponent: false
   };
 
   handleClick = e => {
@@ -39,6 +41,12 @@ class Main extends Component {
     this.randomOdds();
   }
 
+  clickEvent = () => {
+    this.setState({
+      showComponent: true
+    });
+  };
+
   getData = () => {
     fetch(
       'https://s3-eu-west-1.amazonaws.com/test-assignment/test-assignment.json'
@@ -53,11 +61,17 @@ class Main extends Component {
       <div className="main-wrapper">
         <Header />
         <Menu sport={this.state.sport} handleClick={this.handleClick} />
-        <Games
-          sport={this.state.sport}
-          selectedSport={this.state.selectedSport.toLowerCase()}
-          randomArray={this.state.randomArray}
-        />
+        {this.state.showComponent ? (
+          <Result />
+        ) : (
+          <Games
+            sport={this.state.sport}
+            selectedSport={this.state.selectedSport.toLowerCase()}
+            randomArray={this.state.randomArray}
+            clickEvent={this.clickEvent}
+          />
+        )}
+
         <Footer />
       </div>
     );
