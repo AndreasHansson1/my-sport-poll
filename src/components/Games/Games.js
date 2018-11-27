@@ -19,7 +19,6 @@ const Games = props => {
         </div>
       );
     }
-    return;
   });
 
   return (

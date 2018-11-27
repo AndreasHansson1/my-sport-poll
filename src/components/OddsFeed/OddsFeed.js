@@ -2,12 +2,6 @@ import React from 'react';
 import './OddsFeed.css';
 
 const OddsFeed = props => {
-  // const randomOdds = props.randomArray.map(odds => {
-  //   console.log(odds);
-
-  //   return <div className="odds-feed-wrapper">{odds}</div>;
-  // });
-
   return (
     <div className="odds-feed-wrapper">
       <h5>Odds</h5>

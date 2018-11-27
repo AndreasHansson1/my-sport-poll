@@ -9,14 +9,13 @@ class Main extends Component {
   state = {
     sport: [],
     selectedSport: '',
-    randomArray: [],
-    isActive: false
+    randomArray: []
   };
 
   handleClick = e => {
     const selectedSport = e.target.innerHTML.toLowerCase();
 
-    this.setState({ ...this.state, selectedSport, isActive: true });
+    this.setState({ ...this.state, selectedSport });
   };
 
   sportSelector = () => {
@@ -53,11 +52,7 @@ class Main extends Component {
     return (
       <div className="main-wrapper">
         <Header />
-        <Menu
-          sport={this.state.sport}
-          handleClick={this.handleClick}
-          isActive={this.state.isActive}
-        />
+        <Menu sport={this.state.sport} handleClick={this.handleClick} />
         <Games
           sport={this.state.sport}
           selectedSport={this.state.selectedSport.toLowerCase()}
