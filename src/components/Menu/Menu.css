@@ -1,0 +1,12 @@
+.menu-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: beige;
+}
+
+.menu-item {
+  /* display: flex; */
+  background-color: rgb(205, 247, 233);
+}

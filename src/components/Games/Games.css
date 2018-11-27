@@ -1,0 +1,25 @@
+.games-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 90vh;
+  min-height: 70vh;
+  filter: grayscale(0.6);
+}
+
+.sport-div {
+  color: #333;
+  height: 15rem;
+  width: 10rem;
+  margin: 1rem;
+
+  border-radius: 5px;
+  box-shadow: 0 4px 8px #ccc;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.sport-div h4 {
+  /* opacity: 1; */
+}
